@@ -24,7 +24,7 @@ ChatbotUsingFlask/  <br>
 │── app.py                 # Main entry point for Flask app   <br>
 │── .env                   # Environment variables (contains OPENAI_API_KEY)   <br>
 │── website/   <br>
-│<span style="padding-left: 20px;">   ├── __init__.py        # Flask app initialization   <br>
+│<span style="padding-left: 20px;"></span>   ├── __init__.py        # Flask app initialization   <br>
 │   ├── routes.py          # Flask routes & chatbot logic   <br>
 │   ├── models.py          # Data models (Result object for chat history)   <br>
 │   ├── database.db        # SQLite database (if used for persistence)   <br>
@@ -38,11 +38,11 @@ ChatbotUsingFlask/  <br>
    <br>
 
 ## Requirments.txt
-Flask==2.3.3
-Flask-SQLAlchemy==3.0.5
-openai==1.3.0
-python-dotenv==1.0.0
-requests==2.31.0
+Flask==2.3.3    <br>
+Flask-SQLAlchemy==3.0.5   <br>
+openai==1.3.0   <br>
+python-dotenv==1.0.0   <br>
+requests==2.31.0   <br>
 
 ## Run the Flask App
 flask run --host=0.0.0.0
