@@ -24,16 +24,16 @@ ChatbotUsingFlask/  <br>
 │── app.py      &nbsp;           # Main entry point for Flask app   <br>
 │── .env        &nbsp;           # Environment variables (contains OPENAI_API_KEY)   <br>
 │── website/   <br>
-│&nbsp;    ├── __init__.py &nbsp;       # Flask app initialization   <br>
-│&nbsp;    ├── routes.py    &nbsp;      # Flask routes & chatbot logic   <br>
-│&nbsp;    ├── models.py    &nbsp;      # Data models (Result object for chat history)   <br>
-│&nbsp;    ├── database.db   &nbsp;     # SQLite database (if used for persistence)   <br>
-│&nbsp;    ├── static/   <br>
-│&nbsp;    │   └── mainpage.css   # Styling   <br>
-│&nbsp;    └── templates/   <br>
-│&nbsp;        ├── base.html   <br>
-│&nbsp;        ├── history.html   <br>
-│&nbsp;        └── response_view.html   <br>
+│&nbsp;&nbsp;&nbsp;    ├── __init__.py &nbsp;       # Flask app initialization   <br>
+│&nbsp;&nbsp;&nbsp;    ├── routes.py    &nbsp;      # Flask routes & chatbot logic   <br>
+│&nbsp;&nbsp;&nbsp;    ├── models.py    &nbsp;      # Data models (Result object for chat history)   <br>
+│&nbsp;&nbsp;&nbsp;    ├── database.db   &nbsp;     # SQLite database (if used for persistence)   <br>
+│&nbsp;&nbsp;&nbsp;    ├── static/   <br>
+│&nbsp;&nbsp;&nbsp;    │   └── mainpage.css   # Styling   <br>
+│&nbsp;&nbsp;&nbsp;    └── templates/   <br>
+│&nbsp;&nbsp;&nbsp;        ├── base.html   <br>
+│&nbsp;&nbsp;&nbsp;        ├── history.html   <br>
+│&nbsp;&nbsp;&nbsp;        └── response_view.html   <br>
 <br>
 
 ## Requirments.txt
