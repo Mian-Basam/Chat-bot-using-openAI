@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block title %}Question History{% endblock %}
+{% block content %}
+<div class="container-fluid bg-light min-vh-100 py-4">
+  <!-- Header Section -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-lg-10 text-center">
+      <div class="d-flex align-items-center justify-content-center mb-3">
+        <i class="fa fa-history fa-2x text-primary me-3"></i>
+        <h1 class="display-5 fw-bold text-dark mb-0">Question History</h1>
+      </div>
+      <p class="text-muted fs-5">Review your previous conversations with AI Assistant</p>
+    </div>
+  </div>
+
+  <!-- Chat History Card -->
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-xl-8">
+      <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+        <!-- Card Header -->
+        <div class="card-header bg-gradient-primary text-white py-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <div class="bg-white bg-opacity-20 rounded-circle p-2 me-3">
+                <i class="fa fa-robot fs-5"></i>
+              </div>
+              <div>
+                <h4 class="mb-1 fw-bold">Conversation History</h4>
+                <small class="opacity-75">{{ results|length }} messages</small>
+              </div>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-light btn-hover rounded-circle d-flex align-items-center justify-content-center" 
+                      style="width: 40px; height: 40px;"
+                      title="Capture">
+                <i class="fa fa-camera"></i>
+              </button>
+              <button class="btn btn-sm btn-light btn-hover rounded-circle d-flex align-items-center justify-content-center" 
+                      style="width: 40px; height: 40px;"
+                      title="Images">
+                <i class="fa fa-image"></i>
+              </button>
+              <button class="btn btn-sm btn-light btn-hover rounded-circle d-flex align-items-center justify-content-center" 
+                      style="width: 40px; height: 40px;"
+                      title="Settings">
+                <i class="fa fa-cogs"></i>
+              </button>
+              <button class="btn btn-sm btn-light btn-hover rounded-circle d-flex align-items-center justify-content-center" 
+                      style="width: 40px; height: 40px;"
+                      title="Help">
+                <i class="fa fa-question"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="card-body bg-light-subtle p-0">
+          <div class="chat-history p-4" style="max-height: 500px; overflow-y: auto;">
+            {% if results %}
+            <ul class="list-unstyled mb-0">
+              {% for result in results %}
+                <li class="d-flex mb-4 {% if result.messagetype == 'sent' %}justify-content-end{% else %}justify-content-start{% endif %}">
+                  <div class="message-bubble p-3 rounded-4 shadow-sm 
+                              {% if result.messagetype == 'sent' %}
+                                  bg-primary text-white sent-message
+                              {% else %}
+                                  bg-white text-dark received-message
+                              {% endif %}"
+                       style="max-width: 70%;">
+                    <div class="message-content">
+                      {{ result.message }}
+                    </div>
+                    <div class="message-time small mt-2 opacity-75 text-end">
+                      {% if result.timestamp %}
+                        {{ result.timestamp }}
+                      {% else %}
+                        {{ loop.index }}.
+                      {% endif %}
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+            {% else %}
+            <!-- Empty State -->
+            <div class="text-center py-5">
+              <div class="bg-primary bg-opacity-10 rounded-circle p-4 d-inline-flex mb-3">
+                <i class="fa fa-comments text-primary fa-3x"></i>
+              </div>
+              <h4 class="text-muted fw-semibold">No conversation history yet</h4>
+              <p class="text-muted">Start chatting to see your question history appear here.</p>
+              <a href="/" class="btn btn-primary rounded-pill px-4 mt-2">
+                <i class="fa fa-arrow-left me-2"></i>Start Chatting
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer bg-white py-3 border-top">
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted">
+              {% if results %}
+                Showing {{ results|length }} message{% if results|length != 1 %}s{% endif %}
+              {% else %}
+                No messages to display
+              {% endif %}
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.chat-history::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-history::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-history::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.chat-history::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.message-bubble {
+  transition: all 0.2s ease;
+}
+
+.message-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+.sent-message {
+  border-bottom-right-radius: 8px !important;
+}
+
+.received-message {
+  border-bottom-left-radius: 8px !important;
+  border-left: 4px solid #667eea;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+.bg-light-subtle {
+  background-color: #f8f9fa !important;
+}
+</style>
+{% endblock %}
