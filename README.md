@@ -21,13 +21,13 @@ This project is a Flask-based web application that integrates **OpenAI GPT-5** t
 
 ## 📂 Project Structure  
 ChatbotUsingFlask/  <br>
-│── app.py                 # Main entry point for Flask app   <br>
-│── .env                   # Environment variables (contains OPENAI_API_KEY)   <br>
+│── app.py      &nbsp;           # Main entry point for Flask app   <br>
+│── .env        &nbsp;           # Environment variables (contains OPENAI_API_KEY)   <br>
 │── website/   <br>
-│&nbsp;    ├── __init__.py        # Flask app initialization   <br>
-│&nbsp;    ├── routes.py          # Flask routes & chatbot logic   <br>
-│&nbsp;    ├── models.py          # Data models (Result object for chat history)   <br>
-│&nbsp;    ├── database.db        # SQLite database (if used for persistence)   <br>
+│&nbsp;    ├── __init__.py &nbsp;       # Flask app initialization   <br>
+│&nbsp;    ├── routes.py    &nbsp;      # Flask routes & chatbot logic   <br>
+│&nbsp;    ├── models.py    &nbsp;      # Data models (Result object for chat history)   <br>
+│&nbsp;    ├── database.db   &nbsp;     # SQLite database (if used for persistence)   <br>
 │&nbsp;    ├── static/   <br>
 │&nbsp;    │   └── mainpage.css   # Styling   <br>
 │&nbsp;    └── templates/   <br>
