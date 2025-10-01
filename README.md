@@ -31,9 +31,9 @@ ChatbotUsingFlask/  <br>
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- static/   <br>
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- mainpage.css  &nbsp;&nbsp;&nbsp;   # Styling   <br>
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- templates/   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        │-- base.html   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        │-- history.html   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        │-- response_view.html   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         │-- base.html   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       │-- history.html   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        │-- response_view.html   <br>
 <br>
 
 ## Requirments.txt
