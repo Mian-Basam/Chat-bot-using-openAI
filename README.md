@@ -21,45 +21,23 @@ This project is a Flask-based web application that integrates **OpenAI GPT-5** t
 
 ## 📂 Project Structure  
 ChatbotUsingFlask/
-│── app.py # Main entry point for Flask app
-│── .env # Environment variables (contains OPENAI_API_KEY)
-│── website/
-│ ├── init.py # Flask app initialization
-│ ├── routes.py # Flask routes & chatbot logic
-│ ├── models.py # Data models (Result object for chat history)
-│ ├── database.db # SQLite database (if used for persistence)
-│ ├── static/
-│ │ └── mainpage.css # Styling
-│ └── templates/
-│ ├── base.html
-│ ├── history.html
-│ └── response_view.html/
-│── app.py # Main entry point for Flask app
-│── .env # Environment variables (contains OPENAI_API_KEY)
-│── website/
-│ ├── init.py # Flask app initialization
-│ ├── routes.py # Flask routes & chatbot logic
-│ ├── models.py # Data models (Result object for chat history)
-│ ├── database.db # SQLite database (if used for persistence)
-│ ├── static/
-│ │ └── mainpage.css # Styling
-│ └── templates/
-│ ├── base.html
-│ ├── history.html
-│ └── response_view.html/
-│── app.py # Main entry point for Flask app
-│── .env # Environment variables (contains OPENAI_API_KEY)
-│── website/
-│ ├── init.py # Flask app initialization
-│ ├── routes.py # Flask routes & chatbot logic
-│ ├── models.py # Data models (Result object for chat history)
-│ ├── database.db # SQLite database (if used for persistence)
-│ ├── static/
-│ │ └── mainpage.css # Styling
-│ └── templates/
-│ ├── base.html
-│ ├── history.html
-│ └── response_view.html
+│
+├── app.py                 # Main entry point for Flask app
+├── .env                   # Environment variables (contains OPENAI_API_KEY)
+│
+└── website/
+    ├── __init__.py        # Flask app initialization
+    ├── routes.py          # Flask routes & chatbot logic
+    ├── models.py          # Data models (Result object for chat history)
+    ├── database.db        # SQLite database (if used for persistence)
+    │
+    ├── static/
+    │   └── mainpage.css   # Styling
+    │
+    └── templates/
+        ├── base.html
+        ├── history.html
+        └── response_view.html
 
 ## Run the Flask App
 flask run --host=0.0.0.0
