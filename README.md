@@ -21,19 +21,19 @@ This project is a Flask-based web application that integrates **OpenAI GPT-5** t
 
 ## 📂 Project Structure  
 ChatbotUsingFlask/  <br>
-│── app.py      &nbsp;           # Main entry point for Flask app   <br>
-│── .env        &nbsp;           # Environment variables (contains OPENAI_API_KEY)   <br>
-│── website/   <br>
-│&nbsp;&nbsp;&nbsp;    ├── __init__.py &nbsp;       # Flask app initialization   <br>
-│&nbsp;&nbsp;&nbsp;    ├── routes.py    &nbsp;      # Flask routes & chatbot logic   <br>
-│&nbsp;&nbsp;&nbsp;    ├── models.py    &nbsp;      # Data models (Result object for chat history)   <br>
-│&nbsp;&nbsp;&nbsp;    ├── database.db   &nbsp;     # SQLite database (if used for persistence)   <br>
-│&nbsp;&nbsp;&nbsp;    ├── static/   <br>
-│&nbsp;&nbsp;&nbsp;    │   └── mainpage.css   # Styling   <br>
-│&nbsp;&nbsp;&nbsp;    └── templates/   <br>
-│&nbsp;&nbsp;&nbsp;        ├── base.html   <br>
-│&nbsp;&nbsp;&nbsp;        ├── history.html   <br>
-│&nbsp;&nbsp;&nbsp;        └── response_view.html   <br>
+│-- app.py      &nbsp;&nbsp;&nbsp;           # Main entry point for Flask app   <br>
+│-- .env        &nbsp;&nbsp;&nbsp;           # Environment variables (contains OPENAI_API_KEY)   <br>
+│-- website/   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- __init__.py &nbsp;&nbsp;&nbsp;       # Flask app initialization   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- routes.py    &nbsp;&nbsp;&nbsp;     # Flask routes & chatbot logic   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- models.py    &nbsp;&nbsp;&nbsp;      # Data models (Result object for chat history)   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- database.db   &nbsp;&nbsp;&nbsp;     # SQLite database (if used for persistence)   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- static/   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │   │-- mainpage.css   # Styling   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- templates/   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        │-- base.html   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        │-- history.html   <br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        │-- response_view.html   <br>
 <br>
 
 ## Requirments.txt
