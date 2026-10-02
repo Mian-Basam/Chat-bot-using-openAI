@@ -1,48 +1,61 @@
-# Flask GPT-5 Chatbot  
-![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)  
-![Flask](https://img.shields.io/badge/flask-2.0+-black.svg)  
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5-412991.svg)  
-![License](https://img.shields.io/badge/license-MIT-green.svg)  
-![Status](https://img.shields.io/badge/status-active-success.svg)  
+# Flask GPT Chatbot
 
-This project is a Flask-based web application that integrates **OpenAI GPT-5** to create an interactive AI-powered chatbot. The application allows users to submit queries, receive intelligent responses, and maintain a full conversation history for context-aware interactions.  
+![Python](https://img.shields.io/badge/python-3.12-blue.svg)
+![Flask](https://img.shields.io/badge/flask-3.0-black.svg)
+![OpenAI](https://img.shields.io/badge/OpenAI-gpt--5--mini-412991.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
----
+A Flask web app that wraps the OpenAI API in a simple chat interface. Each question is sent along with the previous turns, so answers stay in context, and every exchange is saved to SQLite so you can browse the history.
 
-## 🚀 Features  
-- Flask backend with route handling (`routes.py`)  
-- Integration with **OpenAI GPT-5** for natural language responses  
-- Dynamic conversation history stored in memory  
-- Templated frontend using **Jinja2** (`templates/`)  
-- Basic CSS styling (`static/mainpage.css`)  
-- Environment variable support with `.env` for secure API key management  
+## Features
 
----
+- Context-aware replies: prior messages are sent with each request
+- Conversation history page backed by SQLite (Flask-SQLAlchemy)
+- Jinja2 templates with a lightweight CSS theme
+- API key loaded from environment variables, never hard-coded
+- Dockerfile for a reproducible Python 3.12 environment
 
-## 📂 Project Structure  
-ChatbotUsingFlask/  <br>
-│-- app.py      &nbsp;&nbsp;&nbsp;           # Main entry point for Flask app   <br>
-│-- .env        &nbsp;&nbsp;&nbsp;           # Environment variables (contains OPENAI_API_KEY)   <br>
-│-- website/   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- __init__.py &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;       # Flask app initialization   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- routes.py    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;      # Flask routes & chatbot logic   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- models.py    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;       # Data models (Result object for chat history)   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- database.db   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;      # SQLite database (if used for persistence)   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- static/   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- mainpage.css  &nbsp;&nbsp;&nbsp;   # Styling   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    │-- templates/   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       │-- base.html   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       │-- history.html   <br>
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       │-- response_view.html   <br>
-<br>
+## Project structure
 
-## Requirments.txt
-Flask==2.3.3    <br>
-Flask-SQLAlchemy==3.0.5   <br>
-openai==1.3.0   <br>
-python-dotenv==1.0.0   <br>
-requests==2.31.0   <br>
+```
+ChatbotUsingFlask/
+├── app.py                 # Entry point
+├── .env.example           # Copy to .env and add your key
+└── website/
+    ├── __init__.py        # App factory, DB setup (database.db is created on first run)
+    ├── routes.py          # Routes and OpenAI call
+    ├── models.py          # Result model for chat history
+    ├── static/mainpage.css
+    └── templates/         # base, history, response_view
+Dockerfile
+requirements.txt
+```
 
-## Run the Flask App
+## Getting started
+
+```bash
+git clone https://github.com/Mian-Basam/Chat-bot-using-openAI.git
+cd Chat-bot-using-openAI
+pip install -r requirements.txt
+
+cd ChatbotUsingFlask
+cp .env.example .env        # then set OPENAI_API_KEY
 flask run --host=0.0.0.0
-By default, the app will be available at http://127.0.0.1:5000/.
+```
+
+Open http://127.0.0.1:5000.
+
+### With Docker
+
+```bash
+docker build -t flask-chatbot .
+docker run -p 5000:5000 --env-file ChatbotUsingFlask/.env flask-chatbot
+```
+
+## Tech stack
+
+Python · Flask · Flask-SQLAlchemy · SQLite · OpenAI Python SDK · Jinja2 · Docker
+
+## License
+
+[MIT](LICENSE)
